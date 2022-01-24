@@ -1,0 +1,50 @@
+@import (reference) '../../Global.less';
+
+.cont {
+  width: 100%;
+  max-width: 30em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .row {
+    width: 100%;
+    max-width: 30em;
+  }
+  &.noTime {
+    width: 27em;
+    .row {
+      width: 27em;
+    }
+  }
+  .choose_output_row {
+    .row;
+    margin: 1em 0;
+    display: flex;
+    flex-direction: row;
+    .left {
+      margin-left: 2em;
+      margin-right: 1em;
+      span {
+        .fontsize(mediumLarge);
+      }
+    }
+    .right {
+      .right_row {
+        &:first-child {
+          margin-bottom: 1em;
+        }
+      }
+      span {
+        .fontsize(medium);
+      }
+    }
+    label {
+      padding-left: .5em;
+    }
+  }
+}
+
+.btnCont {
+  float: left;
+}
+

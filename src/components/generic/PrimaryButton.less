@@ -1,0 +1,41 @@
+@import (reference) "../Global.less";
+
+button.primaryButton {
+  display: block;
+  margin: 1.5em auto;
+  margin-top: 0;
+  width: 32em;
+  background: @yellowPale2;
+  border: 1em solid @yellowPale2;
+  padding: 0;
+  .border-radius-custom(15px, 15px, 15px, 15px);
+  .innerCont {
+    padding: 1.5em;
+    background: white;
+    .border-radius-custom(10px, 10px, 10px, 10px);
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.leftCont {
+  width: 15%;
+  float: left;
+  padding-right: 1em;
+  text-align: right;
+}
+
+.textCont {
+  width: 85%;
+  text-align: left;
+  span {
+    font-weight: bold;
+    .fontsize(mediumLarge);
+    color: @blueLink;
+  }
+}

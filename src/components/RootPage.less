@@ -1,0 +1,20 @@
+@import (reference) "./Header.less";
+
+.contentWrapper {
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  .innerContentWrapper {
+    padding: 0;
+    flex: 0 1 auto;
+    min-width: 32em;
+  }
+}
+
+// make the mobile nav sticky
+@media screen and (max-width: unit(@mobileNavMaxWidth,px)) {
+  .contentWrapper {
+    overflow-y: auto;
+  }
+}

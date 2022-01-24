@@ -1,0 +1,21 @@
+{
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        debug: true,
+        useBuiltIns: 'entry',
+        corejs: 3,
+      }
+    ],
+    '@babel/preset-react'
+  ],
+  plugins: [
+    '@babel/plugin-transform-runtime',
+    '@babel/plugin-proposal-class-properties',
+    '@babel/plugin-transform-regenerator',
+    '@babel/plugin-proposal-object-rest-spread',
+    '@babel/plugin-transform-object-assign',
+    '@babel/plugin-syntax-dynamic-import',
+  ]
+}

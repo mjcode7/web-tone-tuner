@@ -1,0 +1,170 @@
+@ie10and11: ~"screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none)";
+
+// zoom-cursor which shows the regular pointer for ie10 and 11
+.zoomInCursor {
+  cursor: zoom-in;
+  @media @ie10and11 {
+    cursor: pointer;
+  }
+}
+
+.border-radius-custom (@topleft: 5px, @topright: 5px, @bottomleft: 5px, @bottomright: 5px) {
+  -webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+  -moz-border-radius: @topleft @topright @bottomright @bottomleft;
+  border-radius: @topleft @topright @bottomright @bottomleft;
+}
+
+.stripedDiagonalBg(@color1, @color2) {
+  background:
+    repeating-linear-gradient(
+            45deg,
+            @color1,
+            @color1 10px,
+            @color2 10px,
+            @color2 20px
+    );
+}
+
+// align this div vertically inside another div
+.vert-align-inner-div {
+  position: relative;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+/* colors
+  higher the number the lighter or darker
+  ex: lightGrey2 is lighter than lightGrey
+  darkGrey2 is darker than darkGrey
+*/
+@blueDark3: #123b53;
+@blueDark: #346886;
+@blueLink: #386fad;
+@lightBlueLink: #237bc5;
+@lightBlueLink2: #65b2df;
+@lightBlueLink3: #92c5e3;
+@lightBlueLink6: #daeeff;
+@greyText:#828282;
+@lightGrey1:#a0a0a0;
+@lightGrey2:#b4b5b6;
+@lightGrey4: #ddd;
+@lightGrey5: #e3e3e3;
+@lightGrey9: #f3f3f3;
+@lightGreyText:#969696;
+@medium-light-grey:#cecece;
+@medium-light-grey1: #e0e0e0;
+@medium-grey:#6c6c6c;
+@darkGreyText:#5A5A5A;
+@redError:#990000;
+@redPale: #ffd8c0;
+@redDark: #7a0006;
+@redBright:#ff0000;
+@darkPink: #deb2b2;
+@greenLight:#00ce00;
+@greenLight1: #00eb00;
+@greenMsg:#2D862B;
+@lightGreenMsgr:#37a819;
+@lightBlack:#121212;
+@lightBlack2:#2b2b2b;
+@dark-green: #30453f;
+@blueGreyMedium: #bdd4e6;
+@lightBlue5: #f1f5f7;
+@lightBlue6: #f9fafa;
+@peach: #fff6d8;
+@peachDark: #f2a358;
+@yellowPale: #f8e69f;
+@yellowPale2: #fff991;
+@yellowPale5: #fffcdb;
+@yellowBold: #fffd57;
+@yellowBold1: #fff666;
+@orange: #FC561E;
+
+.costText {
+  color: @greenMsg;
+}
+
+/* note: we should only apply font-size on leaf-node text elements
+containers should not have font-size so that all other em's are relative
+to the document (and 10x=pixel dims)
+*/
+.fontsize(@value) when
+  (@value = xxLarge),
+  (@value = xLarge),
+  (@value = large),
+  (@value = mediumLarge),
+  (@value = medium),
+  (@value = base),
+  (@value = small),
+  (@value = smaller),
+  (@value = tiny)
+{
+  @xxLarge : 3em;
+  @xLarge : 2.5em;
+  @large : 2.2em;
+  @mediumLarge: 1.9em;
+  @medium: 1.6em;
+  @base: 1.4em;
+  @small: 1.2em;
+  @smaller: 1em;
+  @tiny: .9em;
+  font-size: @@value;
+};
+
+.page-overlay{
+  height: 100%;
+  overflow: auto;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.75);
+}
+
+.vert_divider {
+  border-left: 1px solid #d4d4d5;
+  height: 30px;
+  position: relative;
+  bottom: 0;
+  margin: 0 8px -1px 8px;
+}
+
+.greyBox {
+  background: @lightGrey9;
+  border: 1px solid @lightGrey1;
+  padding: 1.5em;
+  .border-radius-custom(4px,4px,4px,4px);
+}
+
+.whiteBox {
+  background: white;
+  border: 1px solid @lightGrey1;
+  padding: 1.5em;
+  .border-radius-custom(4px,4px,4px,4px);
+}
+
+.gradient (@startColor, @endColor) {
+  background-color: @endColor; /* Old browsers */
+  background-image: -moz-linear-gradient(top, @startColor 0%, @endColor 100%); /* FF3.6-15 */
+  background-image: -webkit-linear-gradient(top, @startColor 0%,@endColor 100%); /* Chrome10-25,Safari5.1-6 */
+  background-image: linear-gradient(to bottom, @startColor 0%,@endColor 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@startColor, endColorstr=@endColor,GradientType=0 ); /* IE6-9 */
+}
+
+.limitedWidthPage {
+  max-width:60em;
+}
+
+.rawHtml {
+  word-wrap: break-word;
+  p:first-child {
+    margin-top: 0;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  p {
+    margin: .5em 0;
+  }
+}

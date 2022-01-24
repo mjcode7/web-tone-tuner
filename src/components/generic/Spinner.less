@@ -1,0 +1,95 @@
+@import (reference) "../Global.less";
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+.widthAndHeight(@size) when
+(@size = large),
+(@size = medium),
+(@size = base),
+(@size = small) {
+  @large : 3em;
+  @medium : 2em;
+  @base : 1.75em;
+  @small : 1.5em;
+  width: @@size;
+  height: @@size;
+}
+
+.borderWidth(@size) when
+(@size = large),
+(@size = medium),
+(@size = small) {
+  @large : 4px;
+  @medium : 2px;
+  @base: 2px;
+  @small : 2px;
+  border-width: @@size;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  .labelContainer {
+    float: left;
+    margin-right: 1em;
+    span {
+      &.small {
+        .fontsize(small)
+      }
+      &.base {
+        .fontsize(base)
+      }
+      &.medium {
+        .fontsize(medium)
+      }
+      &.large {
+        .fontsize(large)
+      }
+    }
+  }
+
+  .spinner {
+    position: relative;
+    &.small {
+      .widthAndHeight(small);
+      &:before {
+        .widthAndHeight(small);
+        .borderWidth(small);
+      }
+    }
+    &.base {
+      .widthAndHeight(base);
+      &:before {
+        .widthAndHeight(base);
+        .borderWidth(base);
+      }
+    }
+    &.medium {
+      .widthAndHeight(medium);
+      &:before {
+        .widthAndHeight(medium);
+        .borderWidth(medium);
+      }
+    }
+    &.large {
+      .widthAndHeight(large);
+      &:before {
+        .widthAndHeight(large);
+        .borderWidth(large);
+      }
+    }
+  }
+  .spinner:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    border-style: solid;
+    border-color: #ccc;
+    border-radius: 50%;
+    border-top-color: #333 !important;
+    animation: spinner .6s linear infinite;
+    left: 0;
+    top: 0;
+  }
+}

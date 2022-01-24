@@ -1,0 +1,14 @@
+{
+  'extends': [
+  	'./.eslintrc_prod'
+  ],
+  'rules': {
+  	'quotes': ['warn', 'single'],
+  	'comma-dangle': ['warn', 'always-multiline'],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-use-before-define': 'off',
+    '@typescript-eslint/camelcase': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+  }
+}

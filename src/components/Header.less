@@ -1,0 +1,187 @@
+@import (reference) "./Global.less";
+@import (reference) "./generic/Button.less";
+
+.site_header{
+  min-width:32em;
+}
+
+.site_nav{
+  height: 4em;
+  display: flex;
+  background-color: @lightBlack2;
+  // note, don't move this to site_header or mobile will show scrollbar
+  border-bottom: 1px solid @lightBlack2;
+}
+
+.mobileMenuBtn,
+.mobileShareBtn{
+	display: none;
+}
+
+.site_logo_cont{
+  height:4em;
+  line-height:4em;
+  width: 25em;
+}
+
+.site_logo_link{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+  width:100%;
+  svg {
+    height: 90%;
+    width: 22.6em;
+  }
+}
+// smaller logo for small screens
+@media screen and (max-width: unit(375,px)) {
+  .site_logo_link{
+    svg {
+      width: 16.6em;
+    }
+  }
+}
+
+.link {
+  float: left;
+  height: 100%;
+  border-left: 1px solid @blueLink;
+  &.trailingDivider {
+    border-right: 1px solid @blueLink;
+  }
+  &.active, &.active:hover {
+    background: @lightBlue6;
+    a {
+      h1, span {
+        color: @lightBlack;
+      }
+    }
+  }
+  a {
+    padding: 0 .75em;
+    height: 100%;
+    float: left;
+    display: table;
+    h1, span {
+      .fontsize(medium);
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: table-cell;
+      vertical-align: middle;
+      height: 100%;
+    }
+    span.username {
+      padding: 0 2px;
+      text-transform: none;
+      .fontsize(base);
+      display: inline-block;
+      max-width: 100px;
+      font-style: italic;
+      height: 100%;
+      line-height: 2.9em;
+    }
+  }
+  &:hover {
+    background: @lightBlue6;
+    transition-duration: 300ms;
+    a {
+      h1, span {
+        color: #3e95e2;
+        transition-duration: 300ms;
+      }
+    }
+  }
+}
+
+.linkDivider {
+  width: 2px;
+  height: 100%;
+  float: left;
+  .top {
+    .gradient(white, @blueLink);
+    height: 50%;
+  }
+  .bottom {
+    .gradient(@blueLink, white);
+    height: 50%;
+  }
+}
+
+.siteNavRight{
+  height:100%;
+  overflow:hidden;
+  flex-grow: 1;
+  color: #b4b5b6;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login_or_reg_cont{
+	float:left;
+	display:inline;
+	margin-left:1.5em;
+	margin-top:0.6em;
+}
+
+span.or{
+	padding:0 .7em;
+	color: @lightGrey2;
+}
+
+.login_link_cont{
+	float:right;
+	margin-right:1.5em;
+	margin-top:0.6em;
+}
+
+.login_link{
+	outline-width:thin;
+}
+
+// max screen width we show the mobile nav for, anything larger gets the desktop nav
+@mobileNavMaxWidth: 810;
+.site_nav {
+  display: flex;
+}
+
+.site_logo_cont{
+  float: none;
+  margin: 0 auto;
+  border-right: 0 none;
+  width: 100%;
+}
+
+.site_nav_button,
+.site_nav_active_button,
+.site_nav_right {
+  display: none;
+}
+
+.siteNavRight,
+.linksContainer {
+  display: none;
+}
+
+.mobileMenuBtn,
+.mobileShareBtn{
+  &.invisible {
+    visibility: hidden;
+  }
+  display: block;
+  position: relative;
+  top: 0;
+  .whiteBlueBtn;
+  .vert-align-inner-div;
+  z-index: 2;
+}
+.mobileMenuBtn {
+  margin-left: 1em;
+}
+
+.mobileShareBtn{
+  margin-right: 1em;
+}

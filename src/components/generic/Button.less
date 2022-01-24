@@ -1,0 +1,151 @@
+@import (reference) '../Global.less';
+
+.btn {
+  .border-radius-custom();
+  border: 1px solid black;
+  div, span {
+    // prevent ie from moving the icon or text on mousedown
+    position: relative;
+  }
+  // button size somehow differs from <a> size. also adding a height makes it smaller than just line-height
+  &.large {
+    height: 4em;
+    line-height: 4em;
+    padding: 0 2em;
+    span {
+      .fontsize(large);
+    }
+  }
+  &.mediumLarge {
+    height: 3.5em;
+    line-height: 3.5em;
+    padding: 0 1.3em;
+    span {
+      .fontsize(mediumLarge);
+    }
+  }
+  &.medium {
+    height: 2.5em;
+    line-height: 2.5em;
+    padding: 0 1em;
+    span {
+      .fontsize(base);
+    }
+  }
+  &.small {
+    padding: 0 1em;
+    height: 1.8em;
+    line-height: 1.8em;
+  }
+  &.tiny {
+    padding: 0 .5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    border: 0;
+    &:hover {
+    }
+    span {
+      .fontsize(small);
+    }
+  }
+}
+
+a.btn, .mockBtn {
+  display: block;
+  .btn;
+  -webkit-appearance: none; // changed from button to none so gradient works in chrome
+  -moz-appearance: button;
+  appearance: button;
+  text-decoration: none;
+  color: initial;
+}
+
+.mockBtn {
+  float: left;
+  clear: left;
+  margin: auto;
+  padding: 1em 2em;
+  &.large {
+    padding: .5em 2em;
+    height: auto;
+    line-height: initial;
+    span {
+      .fontsize(large);
+    }
+  }
+  &.mediumLarge {
+    padding: .5em 1.3em;
+    height: auto;
+    line-height: initial;
+    span {
+      .fontsize(mediumLarge);
+    }
+  }
+  &.medium {
+    padding: .5em 1em;
+    height: auto;
+    line-height: initial;
+    span {
+      .fontsize(medium);
+    }
+  }
+}
+
+.greenWhiteBtn {
+  .gradient(@greenLight, @greenMsg);
+  &:not(.noHover):hover {
+    .gradient(@greenLight1, @greenMsg);
+  }
+  span {
+    color: white;
+  }
+  .icon {
+    svg {
+      fill: white;
+    }
+  }
+  border: 1px solid @darkGreyText;
+}
+
+.blueWhiteBtn {
+  background: @blueLink;
+  border: 1px solid @blueLink !important; // override default
+  span {
+    color: white;
+  }
+  .icon {
+    svg {
+      fill: white;
+    }
+  }
+}
+
+.greyBlackBtn {
+  background: @lightGrey5;
+  border: 1px solid @darkGreyText !important;
+  span {
+    color: @lightBlack;
+  }
+  .icon {
+    svg {
+      fill: @lightBlack;
+    }
+  }
+}
+
+.whiteBlueBtn {
+  background: white;
+  border: 1px solid @blueLink !important; // override default
+  span {
+    color: @blueLink;
+  }
+  .icon {
+    svg {
+      fill: @blueLink;
+    }
+  }
+}
+
+.editThisBtn {
+  .greenWhiteBtn;
+}

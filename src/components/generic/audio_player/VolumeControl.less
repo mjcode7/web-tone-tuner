@@ -1,0 +1,28 @@
+@import (reference) '../../Global.less';
+@import '../InputRange.less';
+@import (reference) './Button.less';
+
+.volumeControl {
+  position: relative;
+  float: left;
+  align-items: center;
+  display: flex;
+}
+
+.volumeControlButton {
+  .button;
+  padding: 1.5em;
+  padding-right: 1em;
+  padding-left: 1em;
+  color: @orange;
+  position: relative;
+  z-index: 2;
+  svg {
+    width: 1.8em;
+    height: 1.8em;
+  }
+}
+
+.rangeInput {
+  width: 100%;
+}

@@ -1,0 +1,31 @@
+@import (reference) "../Global.less";
+
+.cont {
+  width: 90%;
+  max-width: 32em;
+  margin: .5em auto;
+  border: 1px solid @blueDark;
+  overflow: hidden;
+  position: relative;
+  .border-radius-custom();
+  .labelCont {
+    line-height: 3.1em;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    span {
+      .fontsize(large);
+      color: @blueDark3;
+    }
+  }
+  // fine uploader progress bar
+  .innerCont {
+    height: 3em;
+    .stripedDiagonalBg(@lightBlueLink3, @lightBlueLink6);
+    .border-radius-custom();
+    border: 0 none;
+    margin: 0;
+  }
+}

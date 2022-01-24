@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "redux-sanitizers": ["redux_modules/sanitizers.prod.ts"]
+    },
+    "types": [
+      "jest",
+      "node"
+    ],
+    "preserveConstEnums": true,
+    "strictNullChecks": true,   // enable strict null checks as a best practice
+    "outDir": "./dist/",        // path to output directory
+    "sourceMap": true,          // allow sourcemap support
+    "esModuleInterop": true,
+    "module": "es6",            // specify module code generation
+    "jsx": "react",             // use typescript to transpile jsx to js
+    "target": "es5",            // specify ECMAScript target version
+    "allowJs": true,            // allow a partial TypeScript and JavaScript codebase
+    "moduleResolution": "node",
+    "baseUrl": "./src", // allow project-relative imports
+    "lib": [
+      "webworker",
+      "dom",
+      "es5",
+      "scripthost"
+    ],
+    "noErrorTruncation": true // helps debugging
+  },
+  "include": [
+    "./src/"
+  ]
+}
